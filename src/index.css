@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dashboard-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.dashboard-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.search-bar {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.create-task-button {
+  padding: 10px 15px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter-button,
+.calendar-view-button,
+.automation-button,
+.share-button {
+  padding: 10px 15px;
+  background-color: transparent;
+  color: gray;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.create-task-button:hover,
+.filter-button:hover,
+.calendar-view-button:hover,
+.automation-button:hover,
+.share-button:hover {
+  background-color: #0056b3;
+}
+
+.columns-container {
+  display: flex;
+  gap: 20px;
+}
+
+.column {
+  flex: 1;
+  background-color: #e9ecef;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.column h2 {
+  margin-bottom: 20px;
+}
+
+.task-card {
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.introduction {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.introduction > div {
+  width: 30%;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.introduction h3{
+  color: gray;
+  font-size: large;
+  font: bold;
+}
+
+.introduction p{
+  text-align: left;
+  color: grey;
+  font-size: 15px;
+}
+
+.content {
+  text-align: center;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.navbar ul {
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
