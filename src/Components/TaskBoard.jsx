@@ -14,12 +14,13 @@ const TaskBoard = () => {
       const userID = localStorage.getItem('userID');
       const response = await axios.get(`/api/v1/tasks/${userID}`);
       setTasks(response.data.data);
-      console.log(tasks);
+      console.log('Fetched Tasks:', response.data.data);
     };
     fetchTasks();
   }, []);
 
   const onDragEnd = async (result) => {
+    console.log('Drag Result:', result);
     const { source, destination } = result;
     if (!destination) return;
 
@@ -93,15 +94,22 @@ const TaskBoard = () => {
                 {(provided) => (
                   <div {...provided.droppableProps} ref={provided.innerRef} className="column">
                     <h2>{column}</h2>
-                    {tasks.filter(task => task.status === column).map((task, index) => (
-                      <Draggable key={task._id} draggableId={task._id} index={index}>
-                        {(provided) => (
-                          <div {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
-                            <TaskCard task={task} setTasks={setTasks} />
-                          </div>
-                        )}
-                      </Draggable>
-                    ))}
+                    {tasks.filter(task => task.status === column).map((task, index) => {
+                      console.log(`Task status: ${task.status}, Column: ${column}`);
+                      return (
+                        <Draggable key={task._id} draggableId={task._id} index={index}>
+                          {(provided) => (
+                            <TaskCard
+                              task={task}
+                              setTasks={setTasks}
+                              draggableProps={provided.draggableProps}
+                              dragHandleProps={provided.dragHandleProps}
+                              innerRef={provided.innerRef}
+                            />
+                          )}
+                        </Draggable>
+                      );
+                    })}
                     {provided.placeholder}
                   </div>
                 )}

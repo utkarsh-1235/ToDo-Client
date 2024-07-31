@@ -23,7 +23,7 @@ const Login = () => {
       const reqData = JSON.stringify(credentials);
       console.log(reqData)
       const response = await axios.post("/api/v1/users/login", credentials);
-      localStorage.setItem('user', response.data.user); // Store user ID
+      
       localStorage.setItem('userID', response.data.user._id); // Store user ID
       localStorage.setItem('token', response.data.token); // Store token if needed
       navigate("/dashboard");
@@ -51,7 +51,7 @@ const Login = () => {
           className="w-full py-2 font-semibold text-white bg-purple-600 rounded-md hover:bg-purple-700">Login</button>
         </form>
         <p className="mt-4 text-sm text-center text-gray-600">
-          Don't have an account? <a href="/signup" className="text-purple-700 hover:underline">Create a new account.</a>
+          Don't have an account? <a href="/" className="text-purple-700 hover:underline">Create a new account.</a>
         </p>
       </div>
     </div>
