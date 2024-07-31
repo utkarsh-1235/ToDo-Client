@@ -10,26 +10,23 @@ import {
   createRoutesFromElements,
   Route,
   RouterProvider,
+  Routes,
 } from "react-router-dom";
 import Dashboard from './Pages/Dashboard'
 import CreateTask from './Components/CreateTask'
 import CreateTaskModal from './Components/CreateTaskModel'
 
 function App() {
-     const router = createBrowserRouter(
-      createRoutesFromElements(
-        <Route path="/" >
-        <Route path="signup" element={<SignUp/>}></Route>
-        <Route path="login" element={<Login/>}></Route>
-        <Route path="dashboard" element={<Dashboard/>}></Route>
-        <Route path="createtask" element={<CreateTask/>}></Route>
-        </Route>
-      )
-     )
-  return (
-<RouterProvider router={router}>
 
-</RouterProvider>
+  return (
+   <Routes>
+    
+        <Route path="/" element={<SignUp/>}></Route>
+        <Route path="/login" element={<Login/>}></Route>
+        <Route path="/dashboard" element={<Dashboard/>}></Route>
+        <Route path="/createtask" element={<CreateTask/>}></Route>
+        
+   </Routes>
   )
 }
 

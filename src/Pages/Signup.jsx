@@ -2,6 +2,7 @@ import React from 'react';
 import axios from "../Config/axios";
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router';
 
 const SignUp = () => {
     const [student, setStudent] = useState({
@@ -10,7 +11,8 @@ const SignUp = () => {
         password: ""
       });
       const [error, setError] = useState("");
-    
+      const navigate = useNavigate();
+      
       const handleFormChange = (e) => {
         setStudent({
           ...student,
